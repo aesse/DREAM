@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bnet>
+<def>
+<var name="dhsPeakLabel" params="0;1;2;3;4;5;6;7;" type="String"/>
+<var name="Location" params="Promoter;Genic;Distal;" type="String"/>
+<var name="dhsGFootLabel" params="0;1;2;3;4;5;6;7;" type="String"/>
+<var name="GenicLatent" params="0;1;2;3;4;" type="String"/>
+<var name="data_latent" params="1;2;3;4;" type="String"/>
+<var name="motif_latent" params="0;1;2;" type="String"/>
+<var name="dhsGFootCount" type="Real"/>
+<var name="MotifScore" type="Real"/>
+<var name="Overlaps" type="Real"/>
+<var name="GCWindow" type="Real"/>
+<var name="ChipLabel" params="0;1;2;3;4;5;6;7;8;9;10;11;12;13;" type="String"/>
+<var name="logDistance" type="Real"/>
+<var name="logExpression" type="Real"/>
+<var name="DHS" params="1;2;3;4;" type="String"/>
+<var name="dhsSFootLabel" params="0;1;2;3;4;5;6;7;" type="String"/>
+</def>
+<node type="CPT" var="dhsPeakLabel">
+<params>
+</params>
+</node>
+<node type="CPT" var="Location">
+<params>
+</params>
+</node>
+<node type="CPT" var="dhsGFootLabel">
+<params>
+</params>
+</node>
+<node type="CPT" var="GenicLatent">
+<params>
+</params>
+</node>
+<node type="CPT" var="data_latent">
+<parent var="DHS"/>
+<parent var="Location"/>
+<parent var="GenicLatent"/>
+<params>
+</params>
+</node>
+<node type="CPT" var="motif_latent">
+<parent var="data_latent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="dhsGFootCount">
+<parent var="motif_latent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="MotifScore">
+<parent var="motif_latent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="Overlaps">
+<parent var="GenicLatent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="GCWindow">
+<parent var="motif_latent"/>
+<params>
+</params>
+</node>
+<node type="CPT" var="ChipLabel">
+<parent var="data_latent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="logDistance">
+<parent var="GenicLatent"/>
+<params>
+</params>
+</node>
+<node type="GDT" var="logExpression">
+<parent var="GenicLatent"/>
+<params>
+</params>
+</node>
+<node type="CPT" var="DHS">
+<parent var="dhsPeakLabel"/>
+<parent var="dhsGFootLabel"/>
+<parent var="dhsSFootLabel"/>
+<params>
+</params>
+</node>
+<node type="CPT" var="dhsSFootLabel">
+<params>
+</params>
+</node>
+</bnet>
